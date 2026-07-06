@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tab-cli"
+version = "1.0.0"
+description = "A friendlier command line for Tableau Server / Tableau Cloud daily operations."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "GPL-3.0-or-later" }
+authors = [{ name = "jambesh" }]
+keywords = ["tableau", "cli", "tabcmd", "tableauserverclient", "devops"]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: System Administrators",
+    "Programming Language :: Python :: 3",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "tableauserverclient>=0.30",
+    "click>=8.1",
+    "rich>=13.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/jambesh/tableau-cli"
+Repository = "https://github.com/jambesh/tableau-cli"
+
+[project.scripts]
+tab-cli = "tabcli.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["tabcli*"]
